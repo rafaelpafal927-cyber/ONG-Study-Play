@@ -1,0 +1,180 @@
+/* ============ RESET E BASE ============ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+  color: #1f2937;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ============ CABEÇALHO ============ */
+header {
+  background-color: #3a86ff;
+  color: #fff;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+nav a {
+  color: #fff;
+  margin-left: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #ffbe0b;
+}
+
+/* ============ REGRAS DO MODO ESCURO ============ */
+body.dark-mode {
+  background-color: #121212; /* Fundo escuro */
+  color: #f5f7fa; /* Texto claro */
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #0b1c2b;
+}
+body.dark-mode nav a {
+  color: #f5f7fa;
+}
+
+/* ============ CONTEÚDO PRINCIPAL ============ */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Estilo do conteúdo principal no modo escuro */
+body.dark-mode main {
+  background-color: #1f2937; /* Fundo do conteúdo principal escuro */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1); /* Sombra clara */
+}
+
+main h2 {
+  color: #3a86ff;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+/* Cor do título no modo escuro */
+body.dark-mode main h2 {
+  color: #8fa0ff; /* Um azul mais claro para destaque no fundo escuro */
+}
+
+main p {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+/* ============ FORMULÁRIO ============ */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+fieldset {
+  border: 2px solid #e0e4ec;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+legend {
+  color: #3a86ff;
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+label {
+  display: block;
+  margin: 12px 0 4px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e0e4ec;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #3a86ff;
+  outline: none;
+}
+
+#submitButton {
+  background-color: #3a86ff;
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#submitButton:hover {
+  background-color: #265ec5;
+}
+
+/* Mensagem de retorno */
+#mensagemRetorno {
+  text-align: center;
+  margin-top: 16px;
+  font-weight: bold;
+  color: #06d6a0;
+}
+
+/* Botão modo */
+#toggleMode {
+  background-color: #1262db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s; 
+}
+
+body.dark-mode #toggleMode {
+  background-color: #174682; /* amarelo ou a cor que quiser no dark mode */
+  color: #121212; /* texto escuro pra contraste */
+}
+
+#toggleMode:hover {
+  background-color: #1262db;
+}
+
+/* ============ RODAPÉ ============ */
+footer {
+  background-color: #3a86ff;
+  color: #fff;
+  text-align: center;
+  padding: 12px;
+  font-size: 0.9rem;
+}
