@@ -1,0 +1,47 @@
+# =========================
+# .gitignore - Projeto ONG Esperança Viva
+# =========================
+
+# SISTEMA / EDITOR
+.vscode/
+.idea/
+*.code-workspace
+
+# LOGS E TEMPORÁRIOS
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# BACKUPS OU ARQUIVOS DE TESTE
+backup/
+temp/
+cache/
+tmp/
+__pycache__/
+
+# BUILD / DISTRIBUIÇÃO
+dist/
+build/
+out/
+coverage/
+public/
+.env
+
+# ARQUIVOS GERADOS AUTOMATICAMENTE
+*.map
+*.zip
+*.tar
+*.rar
+
+# CONFIGURAÇÕES DE DEBUG OU TESTES
+*.local
+*.env.local
+*.test.js
+*.spec.js
+.vscode/launch.json
+test-output/
+
+# PASTAS DE PERFIS DE DEBUG (como do Chrome)
+.vscode/chrome-debug-profile/

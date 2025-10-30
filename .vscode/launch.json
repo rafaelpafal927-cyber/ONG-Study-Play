@@ -4,7 +4,17 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-
+        {
+            "type": "pwa-chrome",
+            "request": "launch",
+            "name": "Abrir cadastro.html (file://) no Chrome",
+            "url": "file://${workspaceFolder}/cadastro.html",
+            "webRoot": "${workspaceFolder}",
+            "sourceMaps": true,
+            "runtimeArgs": [
+                "--disable-web-security",
+                "--user-data-dir=${workspaceFolder}/.vscode/chrome-debug-profile"
+            ]
+        }
     ]
 }

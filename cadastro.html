@@ -1,3 +1,5 @@
+<!-- SISTEMA SINGLE PAGE APPLICATION (SPA) -->
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,6 +10,29 @@
   <link rel="stylesheet" href="layout.css">
   <link rel="stylesheet" href="css/cadastro.css">
 </head>
+
+<!-- Modal -->
+<div id="modalBackdrop" class="modal-backdrop" hidden></div>
+
+<div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+  aria-describedby="modalDesc" hidden>
+  <div class="modal__panel" role="document">
+    <h3 id="modalTitle">Cadastro recebido 🎉</h3>
+    <p id="modalDesc" style="margin-top: var(--spacing-sm);">
+      Obrigado por se cadastrar, <strong id="modalNome">visitante</strong>! Entraremos em contato por e-mail.
+    </p>
+
+    <div class="modal__actions"
+      style="margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end;">
+      <button type="button" id="modalClose" class="button-secondary">Fechar</button>
+      <a href="projetos.html" class="button-primary" id="modalGoProjects">Ver projetos</a>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+  Dados enviados! ✅
+</div>
 
 <body>
   <header>
@@ -35,70 +60,7 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Cadastre-se e jogue junto com a gente!</h2>
-    <p>
-      Faça parte da <strong>Study&Play</strong> e contribua para levar o aprendizado através dos jogos a mais pessoas.
-      Preencha o formulário abaixo para se cadastrar como voluntário, doador ou participante.
-    </p>
-
-    <!-- Alertas -->
-    <div id="alertGlobal" class="alert alert--success" role="alert" hidden>
-      ✅ Cadastro enviado com sucesso!
-    </div>
-
-    <form id="formCadastro">
-      <fieldset>
-        <legend>Informações Pessoais</legend>
-
-        <label for="nomeCompleto">Nome Completo:</label>
-        <input type="text" id="nomeCompleto" name="nomeCompleto" required placeholder="Ex: Ana Souza">
-
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required placeholder="Ex: ana@email.com">
-
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
-
-        <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
-
-        <label for="nascimento">Data de Nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
-      </fieldset>
-
-      <fieldset>
-        <legend>Endereço</legend>
-
-        <label for="endereco">Endereço:</label>
-        <input type="text" id="endereco" name="endereco" required placeholder="Rua Exemplo, 123">
-
-        <label for="cep">CEP:</label>
-        <input type="text" id="cep" name="cep" required placeholder="00000-000">
-
-        <label for="cidade">Cidade:</label>
-        <input type="text" id="cidade" name="cidade" required>
-
-        <label for="estado">Estado:</label>
-        <input type="text" id="estado" name="estado" required maxlength="2" placeholder="SP">
-      </fieldset>
-
-      <fieldset>
-        <legend>Participação</legend>
-        <label for="tipoParticipacao">Como você gostaria de participar?</label>
-        <select id="tipoParticipacao" name="tipoParticipacao" required>
-          <option value="">Selecione uma opção</option>
-          <option value="voluntario">Voluntário</option>
-          <option value="doador">Doador</option>
-          <option value="participante">Participante dos projetos</option>
-        </select>
-      </fieldset>
-
-      <button id="submitButton" type="submit">Enviar Cadastro</button>
-    </form>
-
-    <p id="mensagemRetorno"></p>
-  </main>
+  <main id="conteudoPrincipal"></main>
 
   <footer>
     <h4>
@@ -120,30 +82,6 @@
       $("#cep").mask("00000-000");
     });
   </script>
-
 </body>
-
-<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
-  Dados enviados! ✅
-</div>
-
-<!-- Modal -->
-<div id="modalBackdrop" class="modal-backdrop" hidden></div>
-
-<div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
-  aria-describedby="modalDesc" hidden>
-  <div class="modal__panel" role="document">
-    <h3 id="modalTitle">Cadastro recebido 🎉</h3>
-    <p id="modalDesc" style="margin-top: var(--spacing-sm);">
-      Obrigado por se cadastrar, <strong id="modalNome">visitante</strong>! Entraremos em contato por e-mail.
-    </p>
-
-    <div class="modal__actions"
-      style="margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end;">
-      <button type="button" id="modalClose" class="button-secondary">Fechar</button>
-      <a href="projetos.html" class="button-primary" id="modalGoProjects">Ver projetos</a>
-    </div>
-  </div>
-</div>
 
 </html>
