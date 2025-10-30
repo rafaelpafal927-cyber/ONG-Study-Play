@@ -1,62 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8">
-    <title>Projetos - ONG Study&Play</title>
-    <link rel="stylesheet" href="css/projetos.css">
-  </head>
 
-  <body>
-    <header>
-      <h1>ONG Study&Play</h1>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
-        <button id="toggleMode">🌙</button>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projetos - ONG Study&Play</title>
+  <link rel="stylesheet" href="layout.css">
+  <link rel="stylesheet" href="css/projetos.css">
+</head>
 
-    <main>
-      <h2>Nossos Projetos</h2>
+<body>
+  <header>
+    <h1>ONG Study&Play</h1>
+    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="nav-menu">
+      <a href="index.html">Início</a>
+      <!-- Dropdown de Projetos -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownProjetos">
+          Projetos ▾
+        </a>
+        <div class="dropdown-content">
+          <a href="projetos.html#gameedu">GameEducation</a>
+          <a href="projetos.html#voluntariado">Voluntariado Lúdico</a>
+          <a href="projetos.html#doe">Doe e Transforme</a>
+        </div>
+      </div>
+      <a href="cadastro.html">Cadastro</a>
+      <button id="toggleMode">🌙</button>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Nossos Projetos</h2>
+    <p>
+      A <strong>Study&Play</strong> desenvolve iniciativas que unem <strong>educação, tecnologia e diversão</strong>.
+      Nossos projetos utilizam jogos educativos como ferramenta para estimular o aprendizado,
+      promover a inclusão digital e despertar o interesse por novas habilidades.
+    </p>
+
+    <section id="gameedu" class="card card--first">
+      <img src="assets/imagens/GameEducation.jpg" alt="Banner do Projeto GameEducation" />
+      <h3>🎮 Projeto GameEducation</h3>
+      <h5>Infraestrutura completa!</h5>
       <p>
-        A <strong>Study&Play</strong> desenvolve iniciativas que unem <strong>educação, tecnologia e diversão</strong>.
-        Nossos projetos utilizam jogos educativos como ferramenta para estimular o aprendizado,
-        promover a inclusão digital e despertar o interesse por novas habilidades.
+        Oficinas gratuitas de criação de jogos, onde crianças e adolescentes aprendem lógica, design e programação
+        enquanto desenvolvem sua criatividade e trabalho em equipe.
       </p>
+    </section>
 
-      <section>
-        <img src="assets/imagens/GameEducation.jpg" alt="Banner do Projeto GameEducation" />
-        <h3>🎮 Projeto GameEducation</h3>
-        <p>
-          Oficinas gratuitas de criação de jogos, onde crianças e adolescentes aprendem lógica, design e programação
-          enquanto desenvolvem sua criatividade e trabalho em equipe.
-        </p>
-      </section>
+    <section id="voluntariado" class="card card--second">
+      <img src="assets/imagens/VoluntariadoLúdico.jpg" alt="Banner do Projeto Voluntariado Lúdico" />
+      <h3>👩‍🏫 Voluntariado Lúdico</h3>
+      <h5>Profissionais dedicados 100% à educação!</h5>
+      <p>
+        Programa que conecta voluntários apaixonados por tecnologia e educação com escolas públicas e comunidades.
+        Os voluntários ajudam a aplicar jogos educativos em sala de aula e a ensinar conceitos de forma divertida.
+      </p>
+    </section>
 
-      <section>
-        <img src="assets/imagens/VoluntariadoLúdico.jpg" alt="Banner do Projeto Voluntariado Lúdico" />
-        <h3>👩‍🏫 Voluntariado Lúdico</h3>
-        <p>
-          Programa que conecta voluntários apaixonados por tecnologia e educação com escolas públicas e comunidades.
-          Os voluntários ajudam a aplicar jogos educativos em sala de aula e a ensinar conceitos de forma divertida.
-        </p>
-      </section>
+    <section id="doe" class="card card--third">
+      <img src="assets/imagens/Doe.webp" alt="Banner do Projeto Doe e Transforme" />
+      <h3>🤝 Doe e Transforme</h3>
+      <h5>Como você pode ajudar?</h5>
+      <p>
+        Suas doações tornam possível levar nossos jogos educativos a mais pessoas.
+        Você pode contribuir com recursos, equipamentos ou tempo como voluntário.
+        <a href="cadastro.html">Clique aqui e participe!</a>
+      </p>
+    </section>
+  </main>
 
-      <section>
-        <img src="assets/imagens/Doe.webp" alt="Banner do Projeto Doe e Transforme" />
-        <h3>🤝 Doe e Transforme</h3>
-        <p>
-          Suas doações tornam possível levar nossos jogos educativos a mais pessoas.
-          Você pode contribuir com recursos, equipamentos ou tempo como voluntário.
-          <a href="cadastro.html">Clique aqui e participe!</a>
-        </p>
-      </section>
-    </main>
-
-    <footer>
+  <footer>
+    <h4>
       <p>&copy; 2025 ONG Study&Play — Aprender também é um jogo!</p>
-    </footer>
-    <script src="js/projetos.js"></script>
-  </body>
+    </h4>
+  </footer>
+  <script src="js/projetos.js"></script>
+  <script src="global.js"></script>
+</body>
+
 </html>

@@ -1,0 +1,301 @@
+:root {
+    /* ESCALA DE TAMANHOS */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-xxl: 64px;
+
+    /* PALETA DE CORES */
+    --primary: #3a86ff;
+    --primary-dark: #1262db;
+    --primary-light: #8fa0ff;
+    --secondary: #ffbe0b;
+    --highlight-orange: #ff7b00;
+    --highlight-green: #1eff00;
+    --white: #ffffff;
+    --gray-light: #f5f7fa;
+    --gray-dark: #1f2937;
+    --black: #000000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--gray-light);
+    color: var(--gray-dark);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: var(--primary);
+    color: var(--white);
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+/* MODO ESCURO */
+body.dark-mode {
+    background-color: var(--black);
+    color: var(--gray-light);
+}
+
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #0b1c2b;
+}
+
+body.dark-mode nav a {
+    color: var(--gray-light);
+}
+
+/* CONTEÚDO PRINCIPAL */
+main {
+    flex: 1;
+    max-width: 900px;
+    margin: var(--spacing-xl) auto;
+    padding: var(--spacing-md);
+    text-align: center;
+    background-color: var(--white);
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+body.dark-mode main {
+    background-color: var(--gray-dark);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+main h2 {
+    font-size: 1.8rem;
+    color: var(--primary);
+    margin-bottom: var(--spacing-md);
+}
+
+body.dark-mode main h2 {
+    color: var(--primary-light);
+}
+
+main p {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.05rem;
+}
+
+/* BOTÃO MODO */
+#toggleMode {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode #toggleMode {
+    background-color: #174682;
+    color: var(--black);
+}
+
+#toggleMode:hover {
+    background-color: var(--primary);
+}
+
+/* RODAPÉ */
+footer {
+    background-color: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: var(--spacing-sm);
+    font-size: 0.9rem;
+}
+
+/* IMAGENS */
+img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* GRID's*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.grid-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: var(--spacing-md);
+}
+
+.projects-grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.projects-grid > .card {
+    grid-column: span 4;
+}
+
+/* MENU HAMBÚRGUER */
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+.nav-menu {
+    display: flex;
+    gap: var(--spacing-sm);
+}
+
+/* CARDS */
+.card--first {
+    border: 2px solid var(--primary);
+    background-color: #92b8ff;
+}
+
+.card--second {
+    border: 2px solid var(--highlight-orange);
+    background-color: #ffc583;
+}
+
+.card--third {
+    border: 2px solid var(--highlight-green);
+    background-color: #aeff9a;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropbtn {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--primary);
+    min-width: 200px;
+    border-radius: 8px;
+    z-index: 10;
+}
+
+.dropdown-content a {
+    color: var(--white);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    display: block;
+    text-align: left;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary-dark);
+}
+
+/* ESTADOS VISUAOS */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+body.dark-mode .dropdown-content {
+    background-color: var(--black);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1024px) {
+    .projects-grid > .card {
+        grid-column: span 6;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .projects-grid > .card {
+        grid-column: 1 / -1;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        right: 0;
+        background-color: var(--primary);
+        width: 100%;
+        padding: var(--spacing-md) 0;
+        text-align: center;
+    }
+
+    .nav-menu a {
+        display: block;
+        padding: var(--spacing-sm) 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+    }
+
+    body.dark-mode .nav-menu {
+        background-color: #0b1c2b;
+    }
+
+    .dropdown-content {
+        position: static;
+        background: #1a5c96;
+        border-radius: 0;
+    }
+}

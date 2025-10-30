@@ -1,128 +1,104 @@
-/* ============ RESET E BASE ============ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", Roboto, sans-serif;
-}
-
-body {
-  background-color: #f5f7fa;
-  color: #1f2937;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-/* ============ CABEÇALHO ============ */
-header {
-  background-color: #3a86ff;
-  color: #fff;
-  padding: 16px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header h1 {
-  font-size: 1.8rem;
-}
-
-nav a {
-  color: #fff;
-  margin-left: 16px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-nav a:hover {
-  color: #ffbe0b;
-}
-
-/* ============ REGRAS DO MODO ESCURO ============ */
-body.dark-mode {
-  background-color: #121212;
-  color: #f5f7fa;
-}
-
-body.dark-mode header,
-body.dark-mode footer {
-  background-color: #0b1c2b;
-}
-body.dark-mode nav a {
-  color: #f5f7fa;
-}
-
-/* ============ CONTEÚDO PRINCIPAL ============ */
-main {
-  flex: 1;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 24px;
-  text-align: center;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
-  transition: background-color 0.3s, box-shadow 0.3s;
-}
-
-/* Estilo do conteúdo principal no modo escuro */
-body.dark-mode main {
-  background-color: #1f2937;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
-}
-
-main h2 {
-  font-size: 1.8rem;
-  color: #3a86ff;
-  margin-bottom: 20px;
-}
-
-body.dark-mode main h2 {
-  color: #8fa0ff;
-}
-
-main p {
-  margin-bottom: 16px;
-  font-size: 1.05rem;
-}
-
 /* Texto dinâmico */
 .changing-text {
   font-weight: bold;
   color: #ffbe0b;
   font-size: 1.2rem;
-  margin: 24px 0;
+  margin: var(--spacing-md) 0;
 }
 
-/* Botão modo */
-#toggleMode {
-  background-color: #1262db;
+/* BADGES (DESTAQUES) */
+.badges-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-lg) 0 var(--spacing-md);
+}
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 999px;
+  font-size: .85rem;
+  font-weight: 700;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s, color 0.3s; 
+  letter-spacing: .3px;
+  user-select: none;
 }
 
-body.dark-mode #toggleMode {
-  background-color: #174682;
+/* variantes de cor */
+.badge--primary {
+  background: #3a86ff;
+}
+
+.badge--success {
+  background: #06d6a0;
+}
+
+.badge--warning {
+  background: #ffbe0b;
+  color: #1f2937;
+}
+
+.badge--info {
+  background: #8338ec;
+}
+
+/* dark mode ajustes */
+body.dark-mode .badge--primary {
+  background: #8fa0ff;
+}
+
+body.dark-mode .badge--success {
+  background: #19dba7;
+}
+
+body.dark-mode .badge--warning {
   color: #121212;
 }
 
-#toggleMode:hover {
-  background-color: #1262db;
+body.dark-mode .badge--info {
+  background: #b388ff;
 }
 
-/* ============ RODAPÉ ============ */
-footer {
-  background-color: #3a86ff;
-  color: #fff;
-  text-align: center;
-  padding: 12px;
-  font-size: 0.9rem;
+/* TAGS (CATEGORIAS) */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  margin-bottom: var(--spacing-lg);
+}
+
+.tag {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 6px;
+  background: #e0e4ec;
+  color: #1f2937;
+  font-size: .9rem;
+  font-weight: 600;
+  border: 1px solid #d7dde6;
+  cursor: pointer;
+  transition: transform .15s ease, background .2s ease, border-color .2s ease;
+}
+
+.tag:hover,
+.tag:focus-visible {
+  background: #cfd5e3;
+  border-color: #bfc7d6;
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* dark mode tags */
+body.dark-mode .tag {
+  background: #2c2f38;
+  color: #f5f7fa;
+  border-color: #3a3e4a;
+}
+
+body.dark-mode .tag:hover,
+body.dark-mode .tag:focus-visible {
+  background: #3a3e4a;
+  border-color: #505767;
 }
