@@ -1,7 +1,7 @@
 # ONG Study&Play
 
 O projeto **ONG Study&Play** é uma aplicação web fictícia voltada para educação através de jogos, desenvolvida como atividade acadêmica prática.  
-Seu objetivo é aplicar conhecimentos de **HTML5, CSS3, JavaScript**, **Acessibilidade (WCAG)**, **Responsividade**, **Git** e **Deploy no GitHub Pages**.
+Seu objetivo é aplicar conhecimentos de **HTML5, CSS3, JavaScript**, **Acessibilidade (WCAG)**, **Responsividade** e **Git**.
 
 ---
 
