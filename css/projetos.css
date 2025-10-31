@@ -16,7 +16,7 @@ section:hover {
 }
 
 section h3 {
-  color: #3a86ff;
+  color: #1262db;
   margin-bottom: var(--spacing-xs);
 }
 
@@ -25,11 +25,16 @@ section p {
 }
 
 section a {
-  color: #3a86ff;
+  color: #1262db;
   text-decoration: none;
   font-weight: bold;
 }
 
 section a:hover {
-  color: #ffbe0b;
+  color: #174682;
+}
+
+section h5 {
+  color: #000;
+  margin-bottom: var(--spacing-xs);
 }

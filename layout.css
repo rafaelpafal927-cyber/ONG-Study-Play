@@ -18,6 +18,7 @@
     --gray-light: #f5f7fa;
     --gray-dark: #1f2937;
     --black: #000000;
+    --blue-dark: #174682;
 }
 
 * {
@@ -39,7 +40,7 @@ body {
 
 /* CABEÇALHO */
 header {
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: var(--white);
     padding: var(--spacing-sm) var(--spacing-md);
     display: flex;
@@ -52,14 +53,26 @@ header h1 {
 }
 
 nav a {
+    display: flex;
     color: var(--white);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s;
+    padding-inline: 6px;
+    justify-content: center;
+    align-items: center;
 }
 
 nav a:hover {
+    border-radius: 8px;
+    background-color: var(--blue-dark);
     color: var(--secondary);
+    text-decoration: underline;
+}
+
+nav a.dropbtn {
+    margin-top: 0px;
+    padding: 3px 6px;
 }
 
 /* MODO ESCURO */
@@ -112,7 +125,7 @@ main p {
 
 /* BOTÃO MODO */
 #toggleMode {
-    background-color: var(--primary-dark);
+    background-color: var(--blue-dark);
     color: var(--white);
     border: none;
     padding: var(--spacing-xs) var(--spacing-md);
@@ -122,17 +135,45 @@ main p {
 }
 
 body.dark-mode #toggleMode {
-    background-color: #174682;
-    color: var(--black);
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+body.dark-mode #toggleMode:hover {
+    background-color: var(--primary);
 }
 
 #toggleMode:hover {
+    background-color: var(--gray-dark);
+}
+
+/* BOTÃO ALTO CONTRASTE */
+#toggleContrast {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    border: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode #toggleContrast {
+    background-color: var(--primary-dark);
+    color: var(--white);
+}
+
+body.dark-mode #toggleContrast:hover {
     background-color: var(--primary);
+}
+
+#toggleContrast:hover {
+    background-color: var(--gray-dark);
 }
 
 /* RODAPÉ */
 footer {
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     color: var(--white);
     text-align: center;
     padding: var(--spacing-sm);
@@ -166,7 +207,7 @@ img {
     grid-template-columns: repeat(12, 1fr);
 }
 
-.projects-grid > .card {
+.projects-grid>.card {
     grid-column: span 4;
 }
 
@@ -220,7 +261,7 @@ img {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--primary);
+    background-color: var(--primary-dark);
     min-width: 200px;
     border-radius: 8px;
     z-index: 10;
@@ -235,10 +276,10 @@ img {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--primary-dark);
+    background-color: var(--blue-dark);
 }
 
-/* ESTADOS VISUAOS */
+/* ESTADOS VISUAIS */
 .dropdown:hover .dropdown-content,
 .dropdown:focus-within .dropdown-content {
     display: block;
@@ -248,9 +289,204 @@ body.dark-mode .dropdown-content {
     background-color: var(--black);
 }
 
+/* ACESSIBILIDADE – NAVEGAÇÃO POR TECLADO */
+
+/* Foco visível */
+a,
+button,
+input,
+textarea,
+select,
+.nav-toggle,
+.dropbtn,
+.nav-menu a,
+.dropdown-content a {
+    outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.nav-toggle:focus-visible,
+.dropbtn:focus-visible,
+.nav-menu a:focus-visible,
+.dropdown-content a:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 3px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+/* focos específicos do header/nav */
+header a:focus-visible,
+header button:focus-visible,
+.nav-menu a:focus-visible,
+.dropbtn:focus-visible {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* foco dark-mode */
+body.dark-mode a:focus-visible,
+body.dark-mode button:focus-visible,
+body.dark-mode input:focus-visible,
+body.dark-mode textarea:focus-visible,
+body.dark-mode select:focus-visible,
+body.dark-mode .nav-toggle:focus-visible,
+body.dark-mode .dropbtn:focus-visible,
+body.dark-mode .nav-menu a:focus-visible,
+body.dark-mode .dropdown-content a:focus-visible {
+    outline-color: var(--highlight-orange);
+}
+
+/* focus p/ navegadores sem :focus-visible */
+@supports not selector(:focus-visible) {
+
+    a:focus,
+    button:focus,
+    input:focus,
+    textarea:focus,
+    select:focus,
+    .nav-toggle:focus,
+    .dropbtn:focus,
+    .nav-menu a:focus,
+    .dropdown-content a:focus {
+        outline: 3px solid var(--secondary);
+        outline-offset: 3px;
+        border-radius: 6px;
+    }
+}
+
+/* Dropdown focus-within */
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:focus-visible {
+    background-color: var(--primary-dark);
+}
+
+/* Foco nos cards */
+.card:where(a, button):focus-visible,
+.card a:focus-visible,
+.card button:focus-visible {
+    outline: 3px solid var(--secondary);
+    outline-offset: 4px;
+}
+
+/* Modo alto contraste */
+
+body.high-contrast {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+/* Header, Footer, Navegação, Dropdown, Painéis */
+body.high-contrast header,
+body.high-contrast footer,
+body.high-contrast .nav-menu,
+body.high-contrast .dropdown-content {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+}
+
+body.high-contrast .nav-toggle,
+body.high-contrast .dropbtn,
+body.high-contrast .nav-menu a {
+    color: #fff !important;
+}
+
+body.high-contrast main {
+    background-color: #000 !important;
+    color: #fff !important;
+    box-shadow: none !important;
+    border: 2px solid #fff !important;
+}
+
+body.high-contrast .card--first,
+body.high-contrast .card--second,
+body.high-contrast .card--third {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+}
+
+body.high-contrast a,
+body.high-contrast .link {
+    color: #ff0 !important;
+    text-decoration: underline !important;
+}
+
+body.high-contrast a:hover,
+body.high-contrast button:hover,
+body.high-contrast .dropbtn:hover,
+body.high-contrast .nav-menu a:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+body.high-contrast button,
+body.high-contrast #toggleMode,
+body.high-contrast .button-primary,
+body.high-contrast .button-secondary,
+body.high-contrast .tag,
+body.high-contrast .badge {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+}
+
+body.high-contrast #toggleMode:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+body.high-contrast .dropdown-content a {
+    background-color: #000 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #fff !important;
+}
+
+body.high-contrast .dropdown-content a:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+body.high-contrast :focus,
+body.high-contrast :focus-visible {
+    outline: 3px solid #ff0 !important;
+    outline-offset: 3px !important;
+    border-radius: 6px;
+}
+
+/* SEÇÕES EM MODO ALTO CONTRASTE */
+
+body.high-contrast section {
+    background-color: #000 !important;
+    color: #fff !important;
+    border: 2px solid #fff !important;
+    box-shadow: none !important;
+}
+
+body.high-contrast section h3,
+body.high-contrast section h5,
+body.high-contrast section p,
+body.high-contrast section a {
+    color: #fff !important;
+}
+
+body.high-contrast section a:hover {
+    color: #ff0 !important;
+    text-decoration: underline !important;
+}
+
+
+
 /* BREAKPOINTS */
 @media (max-width: 1024px) {
-    .projects-grid > .card {
+    .projects-grid>.card {
         grid-column: span 6;
     }
 }
@@ -260,7 +496,7 @@ body.dark-mode .dropdown-content {
         padding: 0 var(--spacing-sm);
     }
 
-    .projects-grid > .card {
+    .projects-grid>.card {
         grid-column: 1 / -1;
     }
 
@@ -274,7 +510,7 @@ body.dark-mode .dropdown-content {
         position: absolute;
         top: 64px;
         right: 0;
-        background-color: var(--primary);
+        background-color: var(--primary-dark);
         width: 100%;
         padding: var(--spacing-md) 0;
         text-align: center;
@@ -297,5 +533,15 @@ body.dark-mode .dropdown-content {
         position: static;
         background: #1a5c96;
         border-radius: 0;
+    }
+
+    body.high-contrast .nav-menu {
+        background-color: #000 !important;
+        border-top: 2px solid #fff !important;
+    }
+
+    body.high-contrast .dropdown-content {
+        background: #000 !important;
+        border-radius: 0 !important;
     }
 }
