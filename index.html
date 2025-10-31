@@ -5,37 +5,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ONG Study&Play</title>
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="layout-min.css">
+  <link rel="stylesheet" href="css/index-min.css" />
 </head>
 
 <body>
   <header>
     <h1>ONG Study&Play</h1>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+
+    <button class="nav-toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu de navegação"
+      type="button">
       ☰
     </button>
 
-    <nav class="nav-menu">
-      <a href="index.html">Início</a>
+    <nav id="menu-principal" class="nav-menu" aria-label="Principal">
+      <a href="index-min.html" aria-current="page">Início</a>
+
       <!-- Dropdown de Projetos -->
       <div class="dropdown">
-        <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownProjetos">
+        <a class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-projetos">
           Projetos ▾
         </a>
-        <div class="dropdown-content">
-          <a href="projetos.html#gameedu">GameEducation</a>
-          <a href="projetos.html#voluntariado">Voluntariado Lúdico</a>
-          <a href="projetos.html#doe">Doe e Transforme</a>
-        </div>
+        <ul id="submenu-projetos" class="dropdown-content" role="menu">
+          <li role="none"><a role="menuitem" href="projetos-min.html#gameedu">GameEducation</a></li>
+          <li role="none"><a role="menuitem" href="projetos-min.html#voluntariado">Voluntariado Lúdico</a></li>
+          <li role="none"><a role="menuitem" href="projetos-min.html#doe">Doe e Transforme</a></li>
+        </ul>
       </div>
-      <a href="cadastro.html">Cadastro</a>
-      <button id="toggleMode">🌙</button>
+
+      <a href="cadastro-min.html">Cadastro</a>
+
+      <!-- Botão de modo -->
+      <button id="toggleMode" type="button" aria-label="Alternar tema escuro" aria-pressed="false">🌙</button>
+      <!-- Botão de alto contraste -->
+      <button id="toggleContrast" type="button" aria-label="Ativar alto contraste" aria-pressed="false">⬛⬜</button>
     </nav>
   </header>
 
-  <main>
-    <img src="assets/imagens/banner.png" alt="Banner da ONG Study&Play" />
+  <main id="conteudo">
+    <img src="assets/imagens/banner.avif" alt="Banner da ONG Study&Play" />
 
     <h2>Aprender brincando: educação que inspira e transforma!</h2>
 
@@ -70,13 +78,11 @@
   </main>
 
   <footer>
-    <h4>
-      <p>&copy; 2025 ONG Study&Play — Aprender também é um jogo!</p>
-    </h4>
+    <p>&copy; 2025 ONG Study&Play — Aprender também é um jogo!</p>
   </footer>
 
-  <script src="js/index.js"></script>
-  <script src="global.js"></script>
+  <script src="js/index-min.js"></script>
+  <script src="global-min.js"></script>
 </body>
 
 </html>

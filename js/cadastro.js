@@ -31,7 +31,7 @@ function showToast(message = "Tudo certo! ✅", duration = 3000) {
   }, duration);
 }
 
-// TEMPLATE DO FORMULÁRIO
+// Template Formulário
 function getFormularioTemplate() {
   return `
     <h2>Cadastre-se e jogue junto com a gente!</h2>
@@ -50,10 +50,10 @@ function getFormularioTemplate() {
         <legend>Informações Pessoais</legend>
 
         <label for="nomeCompleto">Nome Completo:</label>
-        <input type="text" id="nomeCompleto" name="nomeCompleto" required placeholder="Ex: Ana Souza">
+        <input type="text" id="nomeCompleto" name="nomeCompleto" required placeholder="Ex: Ana Lu">
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required placeholder="Ex: usuario@dominio.com">
+        <input type="email" id="email" name="email" required placeholder="Ex: analu@dominio.com">
 
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" name="cpf" required placeholder="000.000.000-00">
@@ -242,7 +242,6 @@ function bindFormulario() {
 
 // Inicialização
 document.addEventListener("DOMContentLoaded", () => {
-  // Se o form não existir (SPA), injeta o template.
   ensureFormRendered();
   
   bindModalOnce();

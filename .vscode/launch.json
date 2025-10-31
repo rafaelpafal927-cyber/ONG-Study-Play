@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "pwa-chrome",
+            "type": "chrome",
             "request": "launch",
-            "name": "Abrir cadastro.html (file://) no Chrome",
-            "url": "file://${workspaceFolder}/cadastro.html",
+            "name": "Abrir index-min.html (file://) no Chrome",
+            "url": "file://${workspaceFolder}/index-min.html",
             "webRoot": "${workspaceFolder}",
             "sourceMaps": true,
             "runtimeArgs": [

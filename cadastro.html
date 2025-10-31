@@ -1,5 +1,4 @@
 <!-- SISTEMA SINGLE PAGE APPLICATION (SPA) -->
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -7,72 +6,79 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro - ONG Study&Play</title>
-  <link rel="stylesheet" href="layout.css">
-  <link rel="stylesheet" href="css/cadastro.css">
+  <link rel="stylesheet" href="layout-min.css">
+  <link rel="stylesheet" href="css/cadastro-min.css">
 </head>
 
-<!-- Modal -->
-<div id="modalBackdrop" class="modal-backdrop" hidden></div>
+<body>
+  <!-- Modal/Toast -->
+  <div id="modalBackdrop" class="modal-backdrop" hidden></div>
 
-<div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
-  aria-describedby="modalDesc" hidden>
-  <div class="modal__panel" role="document">
-    <h3 id="modalTitle">Cadastro recebido 🎉</h3>
-    <p id="modalDesc" style="margin-top: var(--spacing-sm);">
-      Obrigado por se cadastrar, <strong id="modalNome">visitante</strong>! Entraremos em contato por e-mail.
-    </p>
+  <div id="confirmModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
+    aria-describedby="modalDesc" hidden>
+    <div class="modal__panel" role="document">
+      <h3 id="modalTitle">Cadastro recebido 🎉</h3>
+      <p id="modalDesc" style="margin-top: var(--spacing-sm);">
+        Obrigado por se cadastrar, <strong id="modalNome">visitante</strong>! Entraremos em contato por e-mail.
+      </p>
 
-    <div class="modal__actions"
-      style="margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end;">
-      <button type="button" id="modalClose" class="button-secondary">Fechar</button>
-      <a href="projetos.html" class="button-primary" id="modalGoProjects">Ver projetos</a>
+      <div class="modal__actions"
+        style="margin-top: var(--spacing-md); display: flex; gap: var(--spacing-sm); justify-content: flex-end;">
+        <button type="button" id="modalClose" class="button-secondary">Fechar</button>
+        <a href="projetos-min.html" class="button-primary" id="modalGoProjects">Ver projetos</a>
+      </div>
     </div>
   </div>
-</div>
 
-<div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
-  Dados enviados! ✅
-</div>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" hidden>
+    Dados enviados! ✅
+  </div>
 
-<body>
   <header>
     <h1>ONG Study&Play</h1>
-    <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+
+    <!-- Botão menu -->
+    <button class="nav-toggle" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu de navegação"
+      type="button">
       ☰
     </button>
 
-    <nav class="nav-menu">
-      <a href="index.html">Início</a>
+    <!-- Landmark de navegação -->
+    <nav id="menu-principal" class="nav-menu" aria-label="Principal">
+      <a href="index-min.html">Início</a>
 
       <!-- Dropdown de Projetos -->
       <div class="dropdown">
-        <a href="#" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="dropdownProjetos">
+        <a class="dropbtn" type="button" aria-haspopup="true" aria-expanded="false" aria-controls="submenu-projetos">
           Projetos ▾
         </a>
-        <div class="dropdown-content">
-          <a href="projetos.html#gameedu">GameEducation</a>
-          <a href="projetos.html#voluntariado">Voluntariado Lúdico</a>
-          <a href="projetos.html#doe">Doe e Transforme</a>
-        </div>
+        <ul id="submenu-projetos" class="dropdown-content" role="menu">
+          <li role="none"><a role="menuitem" href="projetos-min.html#gameedu">GameEducation</a></li>
+          <li role="none"><a role="menuitem" href="projetos-min.html#voluntariado">Voluntariado Lúdico</a></li>
+          <li role="none"><a role="menuitem" href="projetos-min.html#doe">Doe e Transforme</a></li>
+        </ul>
       </div>
-      <a href="cadastro.html">Cadastro</a>
-      <button id="toggleMode">🌙</button>
+
+      <a href="cadastro-min.html" aria-current="page">Cadastro</a>
+
+      <!-- Botão de modo -->
+      <button id="toggleMode" type="button" aria-label="Alternar tema escuro" aria-pressed="false">🌙</button>
+      <!-- Botão de alto contraste -->
+      <button id="toggleContrast" type="button" aria-label="Ativar alto contraste" aria-pressed="false">⬛⬜</button>
     </nav>
   </header>
 
   <main id="conteudoPrincipal"></main>
 
   <footer>
-    <h4>
-      <p>&copy; 2025 ONG Study&Play — Aprender também é um jogo!</p>
-    </h4>
+    <p>&copy; 2025 ONG Study&Play — Aprender também é um jogo!</p>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-  <script src="js/cadastro.js"></script>
-  <script src="global.js"></script>
+  <script src="js/cadastro-min.js"></script>
+  <script src="global-min.js"></script>
 
   <!-- Máscaras -->
   <script>
